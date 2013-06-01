@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8" />
+  <title>Login Page - Euro Exim</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="ROBOTS" content="FOLLOW,INDEX"/>
+ <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-31051738-1']);
+  _gaq.push(['_setDomainName', 'webasiansystems.com']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+  <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/plugins/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+  <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  
+  <link href="assets/css/style-responsive.css" rel="stylesheet" />
+ 
+  <link href="assets/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+  <link href="#" rel="stylesheet" id="style_metro" />
+  <!-- END GLOBAL MANDATORY STYLES -->
+  <!-- BEGIN PAGE LEVEL STYLES -->  
+  <link href="assets/css/pages/login.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/style1.css" rel="stylesheet" />
+  <!-- END PAGE LEVEL STYLES -->
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+  <!-- BEGIN LOGO -->
+  <div id="logo" class="center"> <a href="http://www.euroeximindia.com/" target="_blank">
+    <img src="assets/img/logo.png" alt="Web Asian Systems logo" class="center" /></a> 
+    <div style='float:right'>
+     <h4> Euro Exim = Managing Cargo With Care</h4>
+    </div>
+  </div>
+  <!-- END LOGO -->
+  <!-- BEGIN LOGIN -->
+  <div id="login">
+    <!-- BEGIN LOGIN FORM -->
+   <%= form_for('user', :class => :'form-horizontal', :id => 'loginform', :class=>"form-vertical no-padding no-margin") do |f| %>
+    <div class="control-group error">
+      <div class="controls">
+        <div class="help-inline">
+          <% flash.each do |name, msg| %>
+          <% if msg.class == Array %>
+            <% msg.each do |message| %>
+              <%= content_tag :div, message, :id => "flash_#{name}" %>
+            <% end %>
+          <% else %>
+            <%= content_tag :div, msg, :id => "flash_#{name}" %>
+          <% end %> 
+          <% end %>
+        </div>
+      </div>
+    </div>
+      <p class="center">Enter your username and password.</p>
+      <div class="control-group">
+        <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on"><i class="icon-user"></i></span>
+            <%= f.email_field :email, :autofocus => true,:placeholder=>"Username" %>
+            <!-- <input id="input-username" type="text" placeholder="Username" /> -->
+          </div>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on"><i class="icon-lock"></i></span>
+             <%= f.password_field :password, :placeholder=>"Password" %>
+            <!-- <input id="input-password" type="password" placeholder="Password" /> -->
+          </div>
+        </div>
+      </div>
+      <div class="control-group remember-me">
+        <div class="controls">
+          <label class="checkbox">
+          <input type="checkbox" name="remember" value="1"/> Remember me
+          </label>
+          <a href="javascript:;" class="pull-right" id="foget-password">Forgot Password?</a>
+        </div>
+      </div>
+      <input type="submit" id="login-btn" class="btn btn-block btn-inverse" value="Login" />
+
+    <% end %>
+    <!-- END LOGIN FORM -->        
+    <!-- BEGIN FORGOT PASSWORD FORM -->
+    <form id="forgotform" class="form-vertical no-padding no-margin hide" action="index.html">
+      <p class="center">Enter your e-mail address below to reset your password.</p>
+      <div class="control-group">
+        <div class="controls">
+          <div class="input-prepend">
+            <span class="add-on"><i class="icon-envelope"></i></span><input id="input-email" type="text" placeholder="Email" />
+          </div>
+        </div>
+        <div class="space10"></div>
+      </div>
+      <input type="button" id="forget-btn" class="btn btn-block btn-inverse" value="Submit" />
+    </form>
+    <!-- END FORGOT PASSWORD FORM -->
+  </div>
+  <!-- END LOGIN -->
+  <!-- BEGIN COPYRIGHT -->
+  <div id="login-copyright">
+    2013 &copy; Euro Exim Inida. All Rights Reserved <br/><br/>
+
+  <!-- END COPYRIGHT -->
+  <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+  <!-- END CORE PLUGINS -->
+  <!-- BEGIN PAGE LEVEL SCRIPTS -->
+  <!-- END PAGE LEVEL SCRIPTS --> 
+  <script>
+    jQuery(document).ready(function() {     
+      // initiate layout and plugins
+      App.init();
+      Login.init();
+    });
+  </script>
+  <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>

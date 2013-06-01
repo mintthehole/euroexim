@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sector: MyString
+  country: MyString
+  mode: MyString
+  f_dest: MyString
+  line: MyString
+  c_and_f: MyString
+  shipper_id: 1
+  cargo: MyString
+  cont_size: MyString
+  cargo_desc: MyString
+  gr_wt: 1.5
+  quantity: 1
+  units: MyString
+
+two:
+  sector: MyString
+  country: MyString
+  mode: MyString
+  f_dest: MyString
+  line: MyString
+  c_and_f: MyString
+  shipper_id: 1
+  cargo: MyString
+  cont_size: MyString
+  cargo_desc: MyString
+  gr_wt: 1.5
+  quantity: 1
+  units: MyString
