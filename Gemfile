@@ -12,6 +12,8 @@ gem 'activeadmin'
 gem "devise", "1.5.0"
 gem "i18n","~> 0.4" 
 gem 'capistrano'
+gem "bcrypt-ruby"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
