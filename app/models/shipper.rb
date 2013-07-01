@@ -23,7 +23,6 @@ class Shipper < ActiveRecord::Base
 		  column_names.each do |cn|
 		  	new_hash[cn] = hash[cn]
 		  end
-		  p new_hash.symbolize_keys
 		  shipper = Shipper.new(new_hash.symbolize_keys)
 		  shippers = Shipper.find(:all, :conditions => ["UPPER(name) like ?", "%#{shipper.name}%"])
 		  if shippers.empty?
